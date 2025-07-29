@@ -39,3 +39,21 @@ if (firstContentParagraph) {
 
 let allContentDivs = document.querySelectorAll(".content");
 console.log("Alle Content-Divs vis querySelectorAll:", allContentDivs.length);
+
+function showRandomContentSection() {
+    const contentSections = document.querySelectorAll(".content");
+
+    contentSections.forEach(section => {
+        section.style.display = "none";
+    }); 
+
+    const randomIndex = Math.floor(Math.random() * contentSections.length);
+
+    if (contentSections[randomIndex]) {
+        contentSections[randomIndex].style.display = "block";
+        console.log(`Zufälliger Inhalt angezeigt: ${contentSections[randomIndex].id}.`);
+    }
+
+};
+
+showRandomContentSection();
