@@ -55,9 +55,24 @@ function showRandomContentSection() {
     }
 };
 
-showRandomContentSection();
+//showRandomContentSection();
 
 if (messageDiv) {
     messageDiv.setAttribute("data-status", "active");
     console.log("Data-Status von MessageDiv:" , messageDiv.getAttribute("data-status"));
 }
+
+function highlighContent(idToHighLight) {
+    document.querySelectorAll(".content").forEach(element => {
+        element.classList.remove("highlight");
+    });
+
+    const selectedElement = document.getElementById(idToHighLight);
+    if (selectedElement) {
+        selectedElement.classList.add("highlight");   
+    }
+}
+
+const highLightIndex = Math.floor(Math.random() * 3);
+const highlightIds = ["content_first", "content_second", "content_third"];
+highlighContent(highlightIds[highLightIndex]);
