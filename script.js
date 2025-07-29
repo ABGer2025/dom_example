@@ -53,7 +53,11 @@ function showRandomContentSection() {
         contentSections[randomIndex].style.display = "block";
         console.log(`Zufälliger Inhalt angezeigt: ${contentSections[randomIndex].id}.`);
     }
-
 };
 
 showRandomContentSection();
+
+if (messageDiv) {
+    messageDiv.setAttribute("data-status", "active");
+    console.log("Data-Status von MessageDiv:" , messageDiv.getAttribute("data-status"));
+}
